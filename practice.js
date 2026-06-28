@@ -38,3 +38,61 @@ ReferenceError: prompt is not defined
 
 */
 
+
+
+function CustomFactorization(number){
+    // elimination:
+    /*
+    - power of 3 ie [log(base_3)x]
+    - multiple of 5 ie [[x-1] % 5]
+    - combination:
+        - > (1*3)+5 = 8
+        - do (-5) then:
+            - power of 3:
+                - multiple of 5:
+                    - notCustomFactorizable
+        - do (/3) then:
+            - multiple of 5;
+                - power of 3:
+                    - notCustomFactorizable
+
+        
+    */
+
+    //Approach:
+    /*
+    - make every logic bit a function that is called under the right circumstance ie if()
+    */
+
+    //Destructuring:
+    ((num - 3) % 5 == 0) ? {
+        /*
+        num = x[5] + 3^1: 3^(2,3,4...);
+        num = 3^x + 1[5]: (2,3,4...)[5];
+        */
+    }:{ /* Something else */ }
+
+    //tree-ing:  ie given the first step could only be: 1 * 3 or 5 + 1
+    ( )
+
+    //Recursive:
+    /*
+    num = 3^n
+    num = 1 + n[5]
+    */
+    
+    //semiRecursive:
+    /*
+    num - 3^(1,2,3...) = 1 + n[5];
+    num - (1,2,3...)[5] = 3^n
+    */
+}
+
+//Logarithms:
+function getBaseLog(x, y) {
+  return Math.log(y) / Math.log(x);
+}
+
+
+
+
