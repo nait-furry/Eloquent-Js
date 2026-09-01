@@ -99,7 +99,7 @@ function isEven(num){
     if(num == 0 || num == 2){
        return true;
     }else if(num > 2){
-        num -= 2 
+        num -= 2
         return isEven(num)
     }else{
        return false;
@@ -143,4 +143,58 @@ function countChar(string, char){
 let journal  = [];
 function addEvent(events, squirell){
     journal.push(events, squirell);
+}
+
+
+/* CHAPTER 4 */
+
+function range(start, end, step = 1) {
+  let arr = [];
+  let start2;
+  if (end < start) {
+    step = -1;
+    for (a = start; a >= end; a = a+step){
+      arr.push(a);
+      console.log(arr);
+    }
+  } else {
+    for (a = start; a <= end; a = a+step){
+      arr.push(a);
+      console.log(arr);
+    }
+  }
+  return arr;
+}
+
+function sum(arr) {
+  let total = 0;
+  arr.forEach((a) => {
+    total = total + a;
+    }
+  )
+  return total;
+}
+
+function revearseArray(arr) {
+  let newArr = [];
+  for (let n = arr.length - 1; n >= 0; n--){
+    newArr.push(arr[n]);
+    console.log(newArr);
+  }
+  return newArr;
+}
+
+function reverseArrayInPlace(arr) {
+  let length = arr.length;
+
+  for (i = 0; i < Math.floor(length/2); i++){
+    let end_index = length - 1 - i;
+
+    let temp = arr[i];
+    arr[i] = arr[end_index];
+    arr[end_index] = temp;
+    console.log(`iteration: ${i}; arr: ${arr}; temp: ${temp}; `)
+  }
+
+  return arr;
 }

@@ -40,7 +40,29 @@ ReferenceError: prompt is not defined
 
 
 
-function CustomFactorization(number){
+function CustomFactorization(number, count = 0){
+    if( Number.isInteger(( Math.log(number))/(Math.log(3))) ){
+        console.log("CustomFactorizable: Power of 3");
+    }else if( ((number -1) % 5 == 0)){
+        console.log("CustomFactorizable: Multiple of 5");
+    }else if( number > ((1*3) + 5) && ((count%2) == 0)){
+      number = number -5;
+      count++
+      console.log("number > ((1*3) + 5)" + " number: " + number + " count: " + count)
+      CustomFactorization(number, count);
+    }else if( ((number-5)%3) == 0 ){
+      number = number / 3
+      console.log("(number-5)&3" + " number: " + number + " count: " + count);
+      CustomFactorization(number, 0);
+    }else{
+        return "Can't help you";
+    }
+}
+
+
+
+
+function isCustomFactorizable(number) {
     // elimination:
     /*
     - power of 3 ie [log(base_3)x]
@@ -56,7 +78,7 @@ function CustomFactorization(number){
                 - power of 3:
                     - notCustomFactorizable
 
-        
+
     */
 
     //Approach:
@@ -80,7 +102,7 @@ function CustomFactorization(number){
     num = 3^n
     num = 1 + n[5]
     */
-    
+
     //semiRecursive:
     /*
     num - 3^(1,2,3...) = 1 + n[5];
@@ -93,6 +115,10 @@ function getBaseLog(x, y) {
   return Math.log(y) / Math.log(x);
 }
 
-
-
-
+var nal = [];
+function nul(event, squirrel) {
+  nal = [];
+  function addEntry(event, squirrel) { nal.push({ event, squirrel }) }
+  addEntry(event, squirrel);
+  console.log(nal);
+};

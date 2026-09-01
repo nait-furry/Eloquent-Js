@@ -43,9 +43,39 @@ Focus on the fundamental logic and data structures of the language.
 
 - **Concepts:** Data sets, Arrays, Properties, Methods, Objects, Mutability, Array loops, Destructuring, JSON.
 - **Exercises:**
-  - The sum of a range
-  - Reversing an array
-  - A list
+  - The sum of a range: 
+    * Write a range of functions that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
+    * Write a sum function that takes an array of numbers and returns the sum of these numbers. 
+    * Modify the range function to take an optional third argument that indicates the "step" value used when building the array. If no step is given,  the element go up by increaments of one, corresponding to the old behaviour. It should also work with negative step values. 
+  - Reversing an array:
+    Arrays have a reverse method that changes the array by inverting the
+    order in which its elements appear. For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements. Neither may use the standard reverse method.
+  - A list:
+
+    ```
+    let list = {
+      value: 1,
+      rest: {
+        value: 2,
+        rest: {
+            value: 3,
+            rest: null
+        } 
+      }
+    };
+
+
+    +----------+            
+    | value: 1 |     +----------+ 
+    | rest    ─┼───> | value: 2 |     +----------+
+    +----------+     │ rest: ───┼───> | value: 3 |
+                     +----------+     │ rest:    ┼───> null
+                                      +----------+ 
+  
+    ```
+    Write a function `arrayToList` that builds up a list structure like the one shown when given [1, 2, 3] as argument. Also write a `listToArray` function that produces an array from a list. Then add a helper function `prepend`, which takes an element and a list and creates a new list that adds the element to the front of the input list, and `nth`, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) or undefined when there is no such element.
+    If you haven’t already, also write a recursive version of nth.
+  
   - Deep comparison
 
 ### Chapter 5: Higher-Order Functions
